@@ -1,8 +1,12 @@
-/* --- PROJECT DATA SOURCE --- */
+/* ========================================= */
+/* DATA SOURCES                */
+/* ========================================= */
+
+/* --- 1. PROJECTS --- */
 const projectsData = [
     {
         id: "p1",
-        order: 1,           // Priority 1: High impact, In-Progress
+        order: 1,
         showInResume: true,
         name: "Malware Analysis Tool",
         inProgress: true,
@@ -19,7 +23,7 @@ const projectsData = [
     },
     {
         id: "p7",
-        order: 2,           // Priority 2: New C++ Systems project (High value)
+        order: 2,
         showInResume: true,
         name: "CppChain",
         inProgress: false,
@@ -89,7 +93,7 @@ const projectsData = [
     {
         id: "p4",
         order: 6,
-        showInResume: false, // Hidden from Resume to save space
+        showInResume: false,
         name: "A5/1 Cipher implementation",
         inProgress: false,
         title: "A5/1 Stream Cipher Simulation",
@@ -106,7 +110,7 @@ const projectsData = [
     {
         id: "p6",
         order: 7,
-        showInResume: false, // Hidden from Resume
+        showInResume: false,
         name: "Ray Caster Engine",
         inProgress: false,
         title: "Ray Casting Engine",
@@ -123,69 +127,106 @@ const projectsData = [
     }
 ];
 
-/* --- RENDER LOGIC --- */
+/* --- 2. CERTIFICATIONS --- */
+const certificationsData = [
+    {
+        issuer: "Palo Alto Networks",
+        date: "2024",
+        title: "Cloud Security Fundamentals and Security Operation Fundamentals",
+        tags: ["Network Security", "Cloud Security"],
+        link: "#" // Add link if available
+    },
+    {
+        issuer: "Microsoft Learn",
+        date: "2024",
+        title: "Courses",
+        tags: ["Cloud Computing"],
+        link: "https://learn.microsoft.com/en-gb/users/rahulshankarv-5141/"
+    },
+    {
+        issuer: "EC-Council",
+        date: "2023",
+        title: "Courses",
+        tags: ["Cybersecurity"],
+        link: "#"
+    }
+];
+
+/* --- 3. SKILLS --- */
+// Categories: 'lang' (Languages), 'sys' (Ecosystems), 'tool' (Tools)
+const skillsData = [
+    // Languages
+    { name: "C++", icon: "bxl-c-plus-plus", category: "lang" },
+    { name: "Rust", icon: "bx-code-block", category: "lang" },
+    { name: "Java", icon: "bxl-java", category: "lang" },
+    { name: "C", icon: "bx-code-alt", category: "lang" },
+    { name: "Python", icon: "bxl-python", category: "lang" },
+    { name: "Bash/Shell", icon: "bx-terminal", category: "lang" },
+    { name: "SQL", icon: "bx-data", category: "lang" },
+    { name: "JavaScript", icon: "bxl-javascript", category: "lang" },
+    { name: "HTML5", icon: "bxl-html5", category: "lang" },
+
+    // Ecosystems
+    { name: "Linux (Arch/Ubuntu)", icon: "bxl-tux", category: "sys" },
+    { name: "PostgreSQL", icon: "bxl-postgresql", category: "sys" },
+    { name: "REST APIs", icon: "bx-server", category: "sys" },
+
+    // Tools
+    { name: "Docker", icon: "bxl-docker", category: "tool" },
+    { name: "Git/GitHub", icon: "bxl-git", category: "tool" },
+    { name: "CMake/Make", icon: "bx-wrench", category: "tool" },
+    { name: "GDB/Valgrind", icon: "bx-bug", category: "tool" },
+    { name: "Godot/Engines", icon: "bxs-joystick", category: "tool" },
+    { name: "Unity", icon: "bxl-unity", category: "tool" },
+    { name: "Blender", icon: "bxl-blender", category: "tool" }
+];
+
+
+/* ========================================= */
+/* RENDER LOGIC                  */
+/* ========================================= */
+
 if (typeof document !== 'undefined') {
     document.addEventListener("DOMContentLoaded", () => {
-        const listContainer = document.getElementById("project-list-container");
-        const displayContainer = document.getElementById("project-display-container");
+        
+        // --- RENDER PROJECTS ---
+        const projectList = document.getElementById("project-list-container");
+        const projectDisplay = document.getElementById("project-display-container");
 
-        // Safety check: Only run if these elements exist (prevents errors on Resume page)
-        if (listContainer && displayContainer) {
-            
-            // 1. SORT PROJECTS
+        if (projectList && projectDisplay) {
             const sortedProjects = projectsData.sort((a, b) => a.order - b.order);
-
-            // Clear existing content
-            listContainer.innerHTML = '<h2 class="list-header">Select Project</h2>'; 
-            displayContainer.innerHTML = '';
+            
+            projectList.innerHTML = '<h2 class="list-header">Select Project</h2>';
+            projectDisplay.innerHTML = '';
 
             sortedProjects.forEach((project, index) => {
-                
-                // 2. CREATE LIST ITEM (Sidebar/Top Menu)
+                // List Item
                 const listItem = document.createElement("div");
                 listItem.className = `project-item ${index === 0 ? 'active' : ''}`;
                 listItem.setAttribute('onclick', `showProject('${project.id}')`);
                 listItem.setAttribute('onmouseover', `showProject('${project.id}')`);
-                
-                listItem.innerHTML = `
-                    <span class="p-name">${project.name}${project.inProgress ? '*' : ''}</span>
-                    <i class='bx bx-chevron-right'></i>
-                `;
-                listContainer.appendChild(listItem);
+                listItem.innerHTML = `<span class="p-name">${project.name}${project.inProgress ? '*' : ''}</span><i class='bx bx-chevron-right'></i>`;
+                projectList.appendChild(listItem);
 
-
-                // 3. CREATE PROJECT CARD (Content Area)
+                // Project Card
                 const card = document.createElement("div");
                 card.id = project.id;
                 card.className = `project-card ${index === 0 ? 'active' : ''}`;
-
-                // Generate Badges HTML
-                const badgesHTML = project.badges.map(tech => 
-                    `<span class="ptech-badge">${tech}</span>`
-                ).join('');
-
-                // Generate Features HTML
-                const featuresHTML = project.features.map(feat => 
-                    `<li>${feat}</li>`
-                ).join('');
-
-                // Determine Icon (Game vs Github)
+                
+                const badgesHTML = project.badges.map(tech => `<span class="ptech-badge">${tech}</span>`).join('');
+                const featuresHTML = project.features.map(feat => `<li>${feat}</li>`).join('');
                 const iconClass = project.linkIcon ? project.linkIcon : 'bxl-github';
 
                 card.innerHTML = `
                     <div class="card-header">
                         <h1>${project.title}</h1>
-                        <div class="ptech-row">
-                            ${badgesHTML}
-                        </div>
+                        <div class="ptech-row">${badgesHTML}</div>
                     </div>
                     <div class="card-body">
                         <h3>Overview</h3>
                         <p>${project.overview}</p>
                         <h3>Key Features</h3>
-                        <ul class="feature-list">
-                            ${featuresHTML}
-                        </ul>
+                        <ul class="feature-list">${featuresHTML}</ul>
                         <div class="card-footer">
                             <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="btn-link">
                                 ${project.linkText} <i class='bx ${iconClass}'></i>
@@ -193,7 +234,59 @@ if (typeof document !== 'undefined') {
                         </div>
                     </div>
                 `;
-                displayContainer.appendChild(card);
+                projectDisplay.appendChild(card);
+            });
+        }
+
+        // --- RENDER CERTIFICATIONS ---
+        const certContainer = document.getElementById("cert-grid-wrapper");
+        if (certContainer) {
+            certContainer.innerHTML = ''; // Clear hardcoded content
+            certificationsData.forEach(cert => {
+                const tagHTML = cert.tags.map(tag => `<span class="cert-tag">${tag}</span>`).join('');
+                
+                // Create the wrapper (Anchor tag)
+                const a = document.createElement("a");
+                a.className = "cert-item";
+                a.href = cert.link;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                
+                a.innerHTML = `
+                    <div class="cert-content">
+                        <div class="cert-top">
+                            <span class="cert-issuer">${cert.issuer}</span>
+                            <span class="cert-date">${cert.date}</span>
+                        </div>
+                        <h3>${cert.title}</h3>
+                        <div style="display:flex; gap:5px; flex-wrap:wrap; margin-top:5px;">
+                            ${tagHTML}
+                        </div>
+                    </div>
+                    <div class="cert-arrow">
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                `;
+                certContainer.appendChild(a);
+            });
+        }
+
+        // --- RENDER SKILLS ---
+        const skillsContainer = document.getElementById("skills-display-container");
+        if (skillsContainer) {
+            skillsContainer.innerHTML = ''; // Clear hardcoded content
+            skillsData.forEach(skill => {
+                const div = document.createElement("div");
+                // Add classes for filtering: 'filter-item' AND category (e.g. 'lang')
+                div.className = `filter-item ${skill.category}`;
+                
+                div.innerHTML = `
+                    <div class="tech-badge">
+                        <i class='bx ${skill.icon}'></i>
+                        <span>${skill.name}</span>
+                    </div>
+                `;
+                skillsContainer.appendChild(div);
             });
         }
     });
