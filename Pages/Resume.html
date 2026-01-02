@@ -3,149 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Rahul Shankar V</title>
-    
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Resume | Rahul Shankar V</title>
+
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Resume CSS -->
     <link rel="stylesheet" href="../StyleSheets/Others/Resume.css">
 </head>
+
 <body>
 
-    <main class="resume-page">
-        <header class="header-container">
-            <h1>Rahul Shankar V</h1>
-            <p class="subtitle">Computer Science Engineer | Cybersecurity Specialist</p>
-            
-            <div class="contact-bar">
-                <span><i class='bx bxs-map'></i> Coimbatore, India</span>
-                <a href="mailto:rahulshankarv7@gmail.com"><i class='bx bxs-envelope'></i> rahulshankarv7@gmail.com</a>
-                <a href="https://rahulshankarv52.github.io" target="_blank" rel="noopener noreferrer">
-                    <i class='bx bx-globe'></i> rahulshankarv52.github.io
-                </a>
+<main class="resume-page">
+
+    <!-- ===== HEADER ===== -->
+    <header class="header-container">
+        <h1>Rahul Shankar V</h1>
+        <p class="subtitle">Computer Science Engineer | Cyber Security Graduate</p>
+
+        <div class="contact-bar">
+            <span><i class='bx bxs-map'></i> Coimbatore, India</span>
+            <a href="mailto:rahulshankarv7@gmail.com">
+                <i class='bx bxs-envelope'></i> rahulshankarv7@gmail.com
+            </a>
+            <a href="https://rahulshankarv52.github.io/" target="_blank">
+                <i class='bx bx-globe'></i> rahulshankarv52.github.io
+            </a>
+        </div>
+
+        <div class="contact-bar">
+            <a href="https://linkedin.com/in/rahul-shankar-v-56575a255/" target="_blank">
+                <i class='bx bxl-linkedin-square'></i> linkedin.com/in/rahul-shankar-v-56575a255
+            </a>
+            <a href="https://github.com/RahulShankarV52" target="_blank">
+                <i class='bx bxl-github'></i> github.com/RahulShankarV52
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== SUMMARY ===== -->
+    <section>
+        <div class="section-title">Summary</div>
+        <ul>
+            <li>Computer Science Engineering undergraduate specializing in cybersecurity and systems-focused development.</li>
+            <li>Familiar with cloud and distributed systems, with interest in load balancing and deployment tools.</li>
+            <li>Experienced in low-level programming, memory forensics, and Linux-based tooling, with strong communication and cross-team collaboration skills.</li>
+        </ul>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section>
+        <div class="section-title">Skills</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Programming Languages:</strong> C++, Python, Rust, Java
             </div>
-
-            <div class="contact-bar">
-                <a href="https://www.linkedin.com/in/rahul-shankar-v-56575a255/" target="_blank" rel="noopener noreferrer">
-                    <i class='bx bxl-linkedin-square'></i> LinkedIn
-                </a>
-                <a href="https://github.com/RahulShankarV52" target="_blank" rel="noopener noreferrer">
-                    <i class='bx bxl-github'></i> github.com/RahulShankarV52
-                </a>
+            <div class="skill-category">
+                <strong>Web Technologies:</strong> HTML, CSS, JavaScript, SQL
             </div>
-        </header>
-
-        <section>
-            <div class="section-title">Professional Summary</div>
-            <p>
-                Results-driven Computer Science undergraduate specializing in Cybersecurity and System Architecture. 
-                Proficient in C++, Linux, and Malware Analysis, with a proven track record of developing scalable security tools 
-                and automating verification pipelines. Adept at methodical planning and translating complex requirements into 
-                secure, efficient software solutions.
-            </p>
-        </section>
-
-        <section>
-            <div class="section-title">Education</div>
-            <div class="edu-item">
-                <div class="edu-head">
-                    <span>B.Tech in CSE (Cybersecurity)</span>
-                    <span>2022 - 2026</span>
-                </div>
-                <div class="edu-sub">Amrita Vishwa Vidyapeetham | CGPA: 8.96</div>
+            <div class="skill-category">
+                <strong>Cybersecurity:</strong> Volatility, Nmap, Wireshark, Frama-C, Reverse Engineering
             </div>
-
-            <div class="edu-item">
-                <div class="edu-head">
-                    <span>Higher Secondary (12th Grade)</span>
-                    <span>2022</span>
-                </div>
-                <div class="edu-sub">Lisieux Matriculation Higher Secondary School | Percentage: 94.7%</div>
+            <div class="skill-category">
+                <strong>Version Control:</strong> Git, GitHub
             </div>
-        </section>
-
-        <section>
-            <div class="section-title">Technical Skills</div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <strong>Languages:</strong> C++, Python, Java, Rust, Bash, SQL
-                </div>
-                <div class="skill-category">
-                    <strong>Core Concepts:</strong> Malware Analysis, Network Security, OOP, DSA
-                </div>
-                <div class="skill-category">
-                    <strong>Tools & Platforms:</strong> Git, Docker, Linux (Mint/Ubuntu), Wireshark
-                </div>
-                <div class="skill-category">
-                    <strong>Methodologies:</strong> Agile, Threat Modeling, CI/CD Pipelines
-                </div>
+            <div class="skill-category">
+                <strong>Productivity & Communication:</strong> Microsoft Excel (Analytics), Markdown, Presentations, Teamwork
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <div class="section-title">Key Projects</div>
-            
-            <div id="resume-projects-container"></div>
-            
-        </section>
+    <!-- ===== EXPERIENCE ===== -->
+    <section>
+        <div class="section-title">Experience</div>
 
-        <section>
-            <div class="section-title">Certifications</div>
+        <div class="project-item">
+            <div class="project-title">
+                Certified Cybercrime Intervention Officer (CCIO) | Volunteer | 2023 – Present
+            </div>
             <ul>
-                <li><strong>Palo Alto Networks:</strong> Cloud Security & Secure Software Engineering</li>
-                <li><strong>ISAC India:</strong> Cyber Crime Intervention Officer (CCIO)</li>
+                <li>Assisted 7+ community members in reporting compromised social media accounts.</li>
+                <li>Educated users on identifying AI-driven scams and safe online practices.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
-            <div class="section-title">Leadership & Achievements</div>
+        <div class="project-item">
+            <div class="project-title">
+                Technical Head, Department of Cybersecurity | Anokha 2024
+            </div>
             <ul>
-                <li><strong>Technical Head (Anokha 2024):</strong> Managed resources and logistics for CSE-CYS events; coordinated between faculty and student teams to ensure seamless execution.</li>
-                <li><strong>Hackathon Finalist (AIC RAISE 2025):</strong> Proposed an IoT-based car theft detection system among 300 participating teams.</li>
-                <li><strong>Runner Up:</strong> Amritosavam 2023 Clay Modelling Competition.</li>
+                <li>Led and coordinated department events in an inter-campus fest involving 140 departments.</li>
+                <li>Presented technical event plans to senior management, ensuring timely execution and collaboration.</li>
             </ul>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- ===== PROJECTS ===== -->
+    <section>
+        <div class="section-title">Projects</div>
 
-    <div class="fab-container">
-        <a href="../index.html" class="btn-action btn-back"><i class='bx bx-arrow-back'></i> Back</a>
-        
-        <button onclick="window.print()" class="btn-action"><i class='bx bxs-file-pdf'></i> Save as PDF</button>
-    </div>
-    <script src="../javascript/project_data.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const container = document.getElementById("resume-projects-container");
-            
-            if(container && typeof projectsData !== 'undefined') {
-                
-                // 1. FILTER: Only keep projects marked for resume
-                // 2. SORT: Order them by the 'order' property
-                const resumeProjects = projectsData
-                    .filter(p => p.showInResume === true)
-                    .sort((a, b) => a.order - b.order);
+        <div class="project-item">
+            <div class="project-title">
+                In-Memory Payload Extractor | B.Tech Final Year Project | 2024 – Present
+            </div>
+            <ul>
+                <li>Developed a Rust-based tool to detect malware payloads residing entirely in volatile memory.</li>
+                <li>Performed memory-forensic analysis and exported results in standardized JSON format for dashboard visualization.</li>
+            </ul>
+            <p><strong>Technologies:</strong> Rust, Memory Forensics, Reverse Engineering</p>
+        </div>
 
-                // Loop through the filtered & sorted data
-                resumeProjects.forEach(project => {
-                    const div = document.createElement("div");
-                    div.className = "project-item";
-                    
-                    const techStack = project.badges.join(", ");
-                    const progressText = project.inProgress ? " (In Progress)" : "";
+        <div class="project-item">
+            <div class="project-title">
+                Fortified Kanban | Secure Task Management System | 2023 – 2024
+            </div>
+            <ul>
+                <li>Built a secure-by-design Kanban application using JWT-based authentication and secure REST APIs.</li>
+                <li>Integrated encrypted database storage with advanced task features including checklists and file attachments.</li>
+            </ul>
+            <p><strong>Technologies:</strong> Python, SQL, JWT, REST APIs</p>
+        </div>
+    </section>
 
-                    div.innerHTML = `
-                        <div class="project-title">
-                            ${project.title} <span>${progressText}</span>
-                        </div>
-                        <p><strong>Tech:</strong> ${techStack}</p>
-                        <p>${project.overview}</p>
-                    `;
-                    
-                    container.appendChild(div);
-                });
-            }
-        });
-    </script>
+    <!-- ===== EDUCATION ===== -->
+    <section>
+        <div class="section-title">Education</div>
+
+        <div class="edu-item">
+            <div class="edu-head">
+                <span>Bachelor of Technology in Computer Science and Engineering (Cybersecurity)</span>
+                <span>2022 – Present</span>
+            </div>
+            <div class="edu-sub">Amrita Vishwa Vidyapeetham | CGPA: 8.96</div>
+        </div>
+
+        <div class="edu-item">
+            <div class="edu-head">
+                <span>Higher Secondary (12th Grade)</span>
+                <span>2022</span>
+            </div>
+            <div class="edu-sub">Lisieux Matriculation Higher Secondary School | Percentage: 94.7%</div>
+        </div>
+
+        <div class="edu-item">
+            <div class="edu-head">
+                <span>Secondary School (10th Grade)</span>
+                <span>2020</span>
+            </div>
+            <div class="edu-sub">Lisieux Matriculation Higher Secondary School | Percentage: 91.4%</div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== FLOATING ACTION BUTTONS ===== -->
+<div class="fab-container">
+    <a href="../index.html" class="btn-action btn-back">
+        <i class='bx bx-arrow-back'></i> Back
+    </a>
+    <button class="btn-action" onclick="window.print()">
+        <i class='bx bxs-file-pdf'></i> Save as PDF
+    </button>
+</div>
+
 </body>
 </html>
