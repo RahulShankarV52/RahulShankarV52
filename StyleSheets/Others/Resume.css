@@ -67,6 +67,7 @@ h1 {
     color: #555;
     margin-bottom: 12px;
     font-weight: 500;
+    text-align: center;
 }
 
 .contact-bar {
@@ -76,6 +77,7 @@ h1 {
     gap: 15px;
     font-size: 13px;
     color: #444;
+    
 }
 
 .contact-bar span, .contact-bar a {
